@@ -1,0 +1,70 @@
+echo "VIMRC LOADED"
+if has("python")
+    python import sys
+    python import os
+    python import vim
+    python sys.argv = [vim.eval("v:progname")] 
+endif
+
+set nocompatible            " Use Vim defaults (much better!)
+set bs=2                    " allow backspacing over everything in insert mode
+set nobackup                " Don't keep a backup file
+set viminfo='20,\"90,h,%    " read/write a .viminfo file
+set history=500
+set statusline=%<%f%m%r%y%=%b\ 0x%B\ \ %l,%c%V\ %P
+set laststatus=2            " always a status line
+
+set dir=~/.vim/tmp//        " Put all swap files in common location (out of workspace and NFS volumes)
+" set undodir=~/.vim/tmp/undo//
+" set undofile
+set hidden                  " allow editing in multiple buffers
+
+set incsearch
+set ignorecase
+set smartcase
+
+set scrolloff=3
+
+" GUI options that need to be set here first
+" Remove exta, useless button bar.
+set guioptions-=T
+set guioptions+=t
+
+set encoding=utf-8
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax enable
+  set hlsearch
+  " colorscheme mycolors
+endif
+
+filetype plugin on
+filetype indent on
+
+augroup cprog
+  " Remove all cprog autocommands
+  au!
+
+  " When starting to edit a file:
+  "   For C and C++ files set formatting of comments and set C-indenting on.
+  "   For other files switch it off.
+  "   Don't change the order, it's important that the line with * comes first.
+  autocmd FileType *      set formatoptions=tcql nocindent comments&
+  autocmd FileType c,cpp  set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
+augroup END
+
+augroup newfile 
+  au!
+  autocmd BufNewFile            *.html  0r      ~/Templates/HTML4.html
+  autocmd BufNewFile            *.xhtml 0r      ~/Templates/XHTML.xhtml
+  autocmd BufNewFile            *.c     0r      ~/Templates/C.c
+  autocmd BufNewFile            *.py    0r      ~/Templates/Python.py
+  autocmd BufNewFile            *.js    0r      ~/Templates/Javascript.js
+  autocmd BufNewFile            *.txt   0r      ~/Templates/RST.rst
+  autocmd BufNewFile            *.rst   0r      ~/Templates/RST.rst
+augroup END

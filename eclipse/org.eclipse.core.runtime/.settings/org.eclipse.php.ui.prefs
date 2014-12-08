@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+editorColorVariable=\#a52a2a | null | false | false | false | false
+foldClasses=true
+foldFunctions=true
+foldHeaderComment=true
+foldPHPDoc=true
+org.eclipse.php.core.workspaceDefaultLocale=en_AU
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ClassHighlighting.color=\#1e90ff
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ClassHighlighting.enabled=true
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FunctionHighlighting.color=\#1e90ff
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FunctionHighlighting.enabled=true
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.MethodHighlighting.color=\#1e90ff
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.MethodHighlighting.enabled=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
