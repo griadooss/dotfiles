@@ -21,16 +21,17 @@ set nocompatible
 " from xmodulo.com/2014/06/turn-vim-full-fledged-ide.html
 execute pathogen#infect()
 
+
 " Added by Mysefl - 07/12/2014
 " on advice from https://github.com/joonty/vdebug
 " when attempting to install vdebug for debugging vim plugins
-" in particulare the marvim macro manager!!
 call pathogen#helptags()
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
-filetype indent plugin on
+"filetype indent plugin on
+filetype off
 
 " Enable syntax highlighting
 syntax on
@@ -153,7 +154,6 @@ set expandtab
 " two characters wide.
 "set shiftwidth=2
 "set tabstop=2
-
 
 "------------------------------------------------------------
 " Mappings {{{1
